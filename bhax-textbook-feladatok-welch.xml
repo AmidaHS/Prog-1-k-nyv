@@ -1,0 +1,143 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Welch!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Első osztályom</title>
+        <para>
+            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér 
+            teljesen irreleváns, csak annyiban érdekes, hogy az algoritmus egy számítása során két normálist
+            számol ki, az egyiket elspájzolod és egy további logikai taggal az osztályban jelzed, hogy van vagy
+            nincs eltéve kiszámolt szám.
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            C++:
+            <link xlink:href="https://gist.github.com/AmidaHS/aae5212fd08103700c105bce57823c4d">https://gist.github.com/AmidaHS/aae5212fd08103700c105bce57823c4d</link>
+        </para>
+        <para>
+            Java:
+            <link xlink:href="https://gist.github.com/AmidaHS/95fdfdd6b54cf07aa6006eacf51265c9">https://gist.github.com/AmidaHS/95fdfdd6b54cf07aa6006eacf51265c9</link>
+        </para>
+        <para>
+        Először megadjuk a "Polargen" nwvű osztályt.Majd egy maximum 100-ig terjedő véletlenszám generátort, egyenlőre még nem tárolunk benne egy számot sem. A következő függvény generál két számot, egyiket eltárolja ami által logikai értéke megváltozik és hamis lesz.Másik számot visszaadja. Fontos szerepet játszik a nincsTárolt logikai változó, hiszen segítségével tudjuk eldönteni hogy páros vagy páratlan lépésben hívtuk meg a függvényt, amennyiben páratlan nem kell számolni csak az előző lépés másik számát adja meg.
+        A main rész iratja ki az eredményt. Objektum orientált feladat, azért mondható könnyűnek, hiszen mi emberek mindent megtudunk objektumként határozni és ez itt sincs másként.
+        </para>
+    </section>        
+
+    <section>
+        <title>LZW</title>
+        <para>
+            Valósítsd meg C-ben az LZW algoritmus fa-építését!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása: 
+            <link xlink:href="https://gist.github.com/AmidaHS/c62b6f09ee1a985e750d7086447b0487">https://gist.github.com/AmidaHS/c62b6f09ee1a985e750d7086447b0487</link>               
+        </para>
+        <para>
+        Alkotunk egyfajta adatstruktúrát, ez a "Node", ezt 3 property-re osztjuk.
+        "char c" , "left" és "Node*" .
+        A "create_empty() függvény létrehoz egy új Node* pointert, a bal és jobb gyermekét beállítjuk nullára, ezután a függvény ezzel tér vissza.
+        A "create_node(char val)" paraméterenként foglal helyett a memóriában,majd ezt eltárolja a "val" segítségével. A jobb és bal gyermekét nullára állítja ezután visszatér egy Node*-al.
+          A "void inorder" részben adjuk meg hogy ennek a fa bejárásnak inorderben történik a feldolgozási sorrendje. (1:bal, 2:gyökér, 3:jobb)
+            A returnnel lépünk ki
+            A depth adja meg a mélységet azaz ez minél mélyebben van annál jobbrább lesz.
+            Az "int main" random generált számokat 2-vel oszt maradékosan így meghatározva a fának az értékeit, ezután kirajzolja.     
+        </para>
+    </section>        
+     
+    <section>
+        <title>Fabejárás</title>
+        <para>
+            Járd be az előző (inorder bejárású) fát pre- és posztorder módon is!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása: 
+            Az előző (6.2) feladat megoldásában megtalálható ennek a feladatnak a megoldása is.               
+        </para>
+        <para>
+            A <function>preorder</function> eljárás annyiban különbözik az <function>inorder</function> eljárástól, hogy itt 1:gyökér, 2:bal oldal 3: jobb oldal.
+        </para>
+        <para>
+            A <function>postorder</function> eljárás annyiban különbözik az <function>inorder</function> eljárástól, hogy itt 1: bal oldal, 2:jobb oldal, 3: gyökér.
+        </para>
+        <para>
+            A <function>usage</function> kapcsoló segítségével adjuk meg a kimenetnek hogy in-/pre-/postordert használjunk.
+        </para>
+
+    </section>  
+    
+    <section>
+        <title>Tag a gyökér</title>
+        <para>
+            Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
+            osztálya. A gyökér csomópont legyen kompozícióban a fával!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:   
+            <link xlink:href="https://gist.github.com/AmidaHS/fdc4244092afc792efb7954a78966941">https://gist.github.com/AmidaHS/fdc4244092afc792efb7954a78966941</link>             
+        </para>
+        <para>
+            Ez a megoldás nagyban épül az előző feladat (6.3) megoldására. A különbség, hogy a bináris fát kezelő függvényeket és eljárásokat a Binfa osztályba rendeztem, illetve a Binfa osztály privát részéve tettem a Node struktúrát. A binfa osztályon belül túlterheltem a balra bitshift operátort, amely mostmár a bináris fa építését látja el, ugyanazon elven, mint az előző feladatokban az <function>insert_tree</function> eljárás.
+        </para>
+    </section>                                
+                                      
+    <section>
+        <title>Mutató a gyökér</title>
+        <para>
+            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a 
+            fával!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:
+            <link xlink:href="https://gist.github.com/AmidaHS/27d0179fd80cbc9c27bb7bf8332a984f">https://gist.github.com/AmidaHS/27d0179fd80cbc9c27bb7bf8332a984f</link>  
+        </para>
+        <para>
+            Hasonló az előző feladathoz egy kisebb átalakítással.A különbség abban mutatható ki, hogy mostmár a gyökérelemre is mutat egy mutató, emiatt a binfa konstruktornak adunk egy gyökérobjektumot. Még egy különbség, hogy a gyökérelemet kell átadni nem a referenciát a függvénynek vagy ahol a fát rajzolta ki, nem úgy mint ezelőtt.
+            
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mozgató szemantika</title>
+        <para>
+            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
+            értékadásra alapozva!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+            <link xlink:href="https://gist.github.com/AmidaHS/c29b3b7d20aafda49e47fdc0d9e83df7">https://gist.github.com/AmidaHS/c29b3b7d20aafda49e47fdc0d9e83df7</link>
+        </para>
+        <para>
+            (6.4-hez hasonló)
+            Egy olyan operátort hozunk létre ami ha nem tartalmazza a gyökeret akkor lemásolja önmagát.Ezt egy rekurzióval fejeződik be, ami minden ágat újra megalkot a másik gyökérre.
+            A "rekurzioInditasa" függvény értelemszerűen elindítja a függvényt. Nullás gyermek esetén itt, egyes gyermek esetén azon is tovább fut.
+            A "rekurzioazAgakon" átfut az összes ágon és az új csomópontokat is létrehozza.
+            A "=" operátor segítségével az alap binFa-t átmásoljuk a binFa2-be.
+        </para>
+    </section>                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

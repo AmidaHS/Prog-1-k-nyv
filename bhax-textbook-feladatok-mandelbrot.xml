@@ -1,0 +1,120 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Mandelbrot!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>A Mandelbrot halmaz</title>
+        <para>
+                
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:  
+            <link xlink:href="https://gist.github.com/AmidaHS/d0b50f83eb5a237eceba54c9d094e964">https://gist.github.com/AmidaHS/d0b50f83eb5a237eceba54c9d094e964</link>               
+        </para>
+        <para>
+                        Tanulságok, tapasztalatok, magyarázat... Tutorált:Nagy László Mihály
+         </para> 
+         <para>  
+            Deklaráljuk a program elején a változókat, amik a kimeneti képünk méretét határozza meg plusz a vizsgált tartományt. Pixelenként megkapja a függvényből kapott paramétereket, amelyet egy tömbben tárol. A függvényben létrehozunk egy png kiterjesztésű fájlt, amibe elmenti a pixelre vonatkozó adatokat. Ezután kiírja a képfájlt.
+        </para>
+    </section>        
+        
+    <section>
+        <title>A Mandelbrot halmaz a <filename>std::complex</filename> osztállyal</title>
+        <para>
+                
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:   
+            <link xlink:href="https://gist.github.com/AmidaHS/264b04f23bd0132c3589c4eccb9ec03d">https://gist.github.com/AmidaHS/264b04f23bd0132c3589c4eccb9ec03d</link>             
+        </para>
+        <para>
+         Hasonló az előzőhöz annyi különbséggel, hogy itt a c++ nyelv komplex osztályát használjuk ki.
+        </para>
+    </section>        
+                
+    <section>
+        <title>Biomorfok</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/IJMbgRzY76E">https://youtu.be/IJMbgRzY76E</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf</link>
+        </para>
+        <para>
+            A biomorfok olyan alakzatok, amelyek ránézésre akár élő organizmusok is lehetnének, viszont nem muszáj természetes eredetűnek lennie az alakzatnak (magyarán, akár lehetnek számítógép által generáltak is).
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            Biomorfok olyan alakzatok, amelyekre először élő organizmus is lehetne, de nem muszáj, ezáltall lehet mesterségesen létrehott is. Alapjának tekinthető a Mandelbrot-halmaz, ezek a hasonlóságok megtalálhatóak a programkódjukban is. Legfőbb eltérést az egyes pixelek színszámítás módjában lehet megtalálni.
+        </para>                        
+    </section>                     
+
+    <section>
+        <title>A Mandelbrot halmaz CUDA megvalósítása</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+            <link xlink:href="https://gist.github.com/AmidaHS/3b9c32e1535426bc598281a68197e890">https://gist.github.com/AmidaHS/3b9c32e1535426bc598281a68197e890</link>
+        </para>
+        <para>
+           Tanulságok, tapasztalatok, magyarázat... Ez a feladat (a fejezet) első feladatára épül, mivel a CUDA nem képes a device kódból függvényekre és osztályokra hivatkozni, amely csak a host-on találhatók. 
+            a "__device__" jelzi, hogy csak videókártyáról érhető el, hostról nem. A mandel függvény alkotja a mandelbrot-halmaz számolását pixelenként.
+            A "__global__" jelzi, hogy kernelfüggvényről van szó. Itt határozza meg az aktuális szállat. Ez dönti el, hogy melyik számot kell éppen vizsgálni.
+            A "cudamandel" függvény végzi a kernel meghívásához szükséges feladatokat. Pl:memóriatárolást a videókártyán
+            A main függvény végzi el a cudamandel és a képfájl létrehozását.
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mandelbrot nagyító és utazó C++ nyelven</title>
+        <para>
+            Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
+            egérrel kiválasztva vizualizálja onnan a komplex iteréció bejárta z<subscript>n</subscript> komplex számokat!
+        </para>
+            
+        <para>
+            Megoldás forrása:  
+        </para>
+
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+            Megoldás forrása: <link xlink:href="https://gist.github.com/AmidaHS/7c3855a3111b52b083fd3ab8dd4817ae">https://gist.github.com/AmidaHS/7c3855a3111b52b083fd3ab8dd4817ae</link>
+        </para>
+        <para>
+           Tanulságok, tapasztalatok, magyarázat... A feladat megoldásához SFML-t használtam. A feladat hasonlít a fejezet második feladatához, így erre építek.
+            A pixelek színét itt is a compute függvény adja meg. A mainben produkáljuk le a szükséges változókat valamint az objektumokat. A while-ban határozzuk meg az interakciókat, amit a felhasználó fog csinálni.
+        </para>
+    </section>                     
+                                                                                                                                                                            
+    <section>
+        <title>Mandelbrot nagyító és utazó Java nyelven</title>
+        <para>
+                       Megoldás forrása: <link xlink:href="https://gist.github.com/AmidaHS/c32ba9b7b8d942fdb7f8772dcbb0d0f3">https://gist.github.com/AmidaHS/c32ba9b7b8d942fdb7f8772dcbb0d0f3</link>  
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...  Létrehozunk egy GUI-t. Megadjuk a paramétereket. Létrehozzuk az összes szükséges objektumot.
+            A plotPoints rész végzi a bejáráshoz szükséges számításokat és magát a bejárást is.
+            Az actionPerformed pedig a kölcsönhatást hajtja végbe a program és a felhasználó között.
+        </para>
+    </section>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

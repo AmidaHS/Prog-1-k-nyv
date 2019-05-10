@@ -1,0 +1,92 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Conway!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Hangyaszimulációk</title>
+        <para>
+            Írj Qt C++-ban egy hangyaszimulációs programot, a forrásaidról utólag reverse engineering jelleggel
+            készíts UML osztálydiagramot is!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/10/10/myrmecologist">https://bhaxor.blog.hu/2018/10/10/myrmecologist</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/AmidaHS/p1">https://github.com/AmidaHS/p1</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat... A program látványosnak és érdekesnek mondható, hiszen a hangyák és feromonjaik általi kommunikáció terjedését akarja nekünk leszimulálni. A képet felosztjuk cellákra, majd megfigyelhetjük hogy milyen ütemben terjednek el és növekszik meg ezek a feromonok és, hogy hogyan alakítanak ki különböző "kitaposott ösvényeket".
+            
+        </para>            
+    </section>        
+    <section>
+        <title>Java életjáték</title>
+        <para>
+            Írd meg Java-ban a John Horton Conway-féle életjátékot, 
+            valósítsa meg a sikló-kilövőt!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gist.github.com/AmidaHS/68ac0fde369d281d0da184d81298b341">https://gist.github.com/AmidaHS/68ac0fde369d281d0da184d81298b341</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat... Ugyan úgy működik, mint a C++-os változata, kivétel, hogy itt kihasználjuk a Java adta lehetőségeket.
+        </para>            
+    </section>        
+    <section>
+        <title>Qt C++ életjáték</title>
+        <para>
+            Most Qt C++-ban!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gist.github.com/AmidaHS/9b3fc3182d34e2b34729cca5b04245a3">https://gist.github.com/AmidaHS/9b3fc3182d34e2b34729cca5b04245a3</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            A feladat SFML-el készült.  
+            Az 1. class rajzolja ki a hálót és ennek a részei jelképezik a sejteket. 
+            A 2. class tárolja a "sejtek" adatait:pl: hely, állapot. Ő felelős a kirajzolásukért is.
+            Az update függvény vizsgyálja a sejteket a játék szabályainak megfelelően. 
+        </para>
+        <para>Szabályok</para>
+        <para>
+            Egy sejt csak akkor marad aktív ha 2 vagy 3 aktív sejt van mellette. 
+            Ha egy sejt nem aktív csak akkor lesz aktív ha 3 sejt aktív mellette.
+        </para>
+        <para>
+        A killall célja, hogy megölje az összes sejtet ha editor modeban vagyunk. Ez tesztelés miatt található meg, hogy újraindítás nélkül lehessen tesztelni. 
+        A mainben jön létre az ablak és itt kapja meg a 10es fps határt a program.
+        Ez után jönnek létre a változók. 
+        A fő ciklus, addig fut, amíg az ablak be nem záródik. 
+        A belső ciklus reagál a különböző eseményekre. 
+        A program akkor áll le ha az ablak bezáródik, vagy ha megnyomjuk a q gombot. 
+        Editorban egérrel állítható a "sejtek" inaktív és aktív állapota.
+        A c megnyomása editorban minden sejtet inaktívvá vált.
+        Ha nem vagyunk editorban elkezdi kirajzolni a játékot.
+        </para>            
+    </section>        
+    <section>
+        <title>BrainB Benchmark</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            A "játékunk" azt figyeli, hogy mennyire tudunk a karakterünkre koncentrálni esetleg ha szem elől tévesztenénk akkor mennyi idő alatt találjuk meg. Ennek egyik legnagyobb előnye a különböző kompetitív játékokban jelent előnyt, ahol egyszerre több dolog történik és mindenhova figyelnünk kell, köztük a karakterünk aktuális pozícióját is. Legjobb példa ilyen helyzetre egy MOBA játéknak a csapatharc része, ahol egyszerre minimum 10 karakter jelenik meg és le kell tudni reagálni a kialakult helyzetet.
+        </para>            
+    </section>        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

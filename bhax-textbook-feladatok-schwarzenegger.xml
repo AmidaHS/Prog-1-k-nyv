@@ -1,0 +1,103 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Schwarzenegger!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Szoftmax Py MNIST</title>
+        <para>
+            Python
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/j7f9SkJR3oc">https://youtu.be/j7f9SkJR3oc</link>      
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0">https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0</link> (/tensorflow-0.9.0/tensorflow/examples/tutorials/mnist/), <link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol</link>  
+        </para>
+        <para>
+            Programunk egyik funkciója, hogy a kézzel rajzolt számokat felismerje. Először importájuk a tensorflow modult, aminek segítségével be tudjuk tölteni az MNIST adatbázisban tárolt adatokat. Az x és y_train valamint a  x és y_test változókban tároljuk el az MNIST adatbázisból a képeket a tesztképeket és a címkéket. Ezután átkonvertáljuk az x-es tömbök értékeit <type>float</type> -ra, majd egységesítjük,hogy 0 és 1 közé essenek az értékek. Ezután kell 6 modult importálni ami segítségével jöhet létre a neutrális hálónk. Megalkotjuk a modelljét, majd "okossá" tesszük a hálót. Ezután pedig kiértékeljük a neurális háló "tudását" a teszt képekkel és címkékkel.
+        </para>
+    </section>        
+
+<!--
+    <section>
+        <title>Szoftmax R MNIST</title>
+        <para>
+            R            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+-->
+    <!--
+        í
+
+    -->
+    <section>
+        <title>Mély MNIST</title>
+        <para>
+            Python            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+            <link xlink:href="https://gist.github.com/AmidaHS/aff80530f03b02bde17f6d67929effb0">https://gist.github.com/AmidaHS/aff80530f03b02bde17f6d67929effb0</link>                
+        </para>
+        <para>
+            A program elején importájuk a szükséges modulokat. Az importálások után létrehozunk négy függvényt, amelyek a programot hivatottak rövidíteni. A függvények után létrehozzuk a neurélis háló rétegeit. Ebben a programban 5 rétegű a neurális háló. A rétegek megadása után megadjuk, hogy milyen módon szeretnénk kiértékeltetni a bemenetet, majd megadjuk, hogy milyen algoritmussal tanítjuk fel a hálót. Ezután következik a tanítás, illetve minden századik iterációban leteszteljük a háló tudását.
+        </para>
+    </section>        
+<!--
+    <section>
+        <title>Deep dream</title>
+        <para>
+            Keras            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+-->                  
+    <section>
+        <title>Minecraft-MALMÖ</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/bAPSu3Rndi8">https://youtu.be/bAPSu3Rndi8</link>      
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gist.github.com/AmidaHS/80aad187e11d0d517933247b262295c1">https://gist.github.com/AmidaHS/80aad187e11d0d517933247b262295c1</link>            
+                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            A Microsoft annak érdekében alkotta meg a Minecraft-MALMÖ projektüket, hogy megalkossanak egy MI-t a Minecrafton belül.
+            A játék célja a karakterünk "Steve" folyamatos mozgásban tartása, jelen esetben 5 percen át. Ennek érdekében elemzi az MI az előtte lévő 12 blokkot és eldönti a legmegfelelőbb lépést, ami lehet: ugrás, elfordulás és más irányban való haladás.
+            A példaprogramot felhasználtam a program megírásához.
+            Legelőször importáljuk a MALMÖ API-t és a nélkülözhetetlen modulokat.A "run" azaz futtatás alatt található meg a küldetés pontos megadása, a "restart_minecraft" függvény pedig az újboli küldetés indításának lehetőségéért felel. A világ legenerálásának szabályait a "missionXML"-ben találhatod.
+            Utána megadjuk az 5 perces idő limitet és a felbontást ami ezesetben 640x480. Két nagyon fontos while ciklust találunk. Az első segítségével addig várakozunk míg a felhasználó kész az írányítást fogadni.
+            A második segítségével pedig karakterünket Stevet tudjuk vezérelni.Az ezutáni elágazásoknak köszönhetően karakterünk át tudja ugrani az akadályt vagy nem fog csak folyamatosan ugrálni, fordulni és "nézelődni" is képes lesz.
+            Ezálltal tudja majd a program megvizsgálni a közelében lévő blokkokat.
+            Ezt a vizsgálatot a "blocks" nevezetű 2D-s tömbre vetítve végzi el a program.
+            
+        </para>
+    </section>        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+</chapter>                

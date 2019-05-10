@@ -1,0 +1,327 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Chomsky!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Decimálisból unárisba átváltó Turing gép</title>
+        <para>
+            Állapotátmenet gráfjával megadva írd meg ezt a gépet!
+        </para>
+        <para>
+            Megoldás forrása:
+        </para>
+        <para>
+            Az unáris számrendszerben való ábrázolás n darab (n a decimális szám) egyforma jel, karakter egymás utáni leírásával történik.
+        </para>
+        <para>
+            A decimálisból unárisba átváltás úgy történik, hogy folyamatosan 1-eket vonunk ki a számból, és tároljuk a levont egyeseket.
+        </para>
+    </section>        
+        
+    <section>
+        <title>Az a<superscript>n</superscript>b<superscript>n</superscript>c<superscript>n</superscript> nyelv nem környezetfüggetlen</title>
+        <para>
+            Mutass be legalább két környezetfüggő generatív grammatikát, amely ezt a nyelvet generálja!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás:
+
+        </para>
+        <para>
+            1:
+            <programlisting><![CDATA[
+Szabályok:
+S -> aBSc
+S -> abc
+Ba -> aB
+Bb -> bb
+Példa levezetés:
+S -> aBSc -> aBaBScc -> aBaBabccc -> aaBBabccc -> aaBaBbccc -> aaaBBbccc -> aaaBbbccc -> aaabbbccc
+                ]]></programlisting>
+        </para>
+        <para>
+            2:
+            <programlisting><![CDATA[
+Szabályok:
+S -> abc
+S -> aXbc
+Xb -> bX
+Xc -> Ybcc
+bY -> Yb
+aY -> aaX
+aY -> aa
+Példa levezetés:
+S -> aXbc -> abXc -> abYbcc -> aYbbcc -> aaXbbcc -> aabXbcc -> aabbXcc -> aabbYbccc -> aabYbbccc -> aaYbbbccc -> aaabbbccc
+                ]]>
+            </programlisting>
+        </para>
+        <para>
+            A generatív nyelvtan elméletét Noam Chomsky alkotta meg, és ő dolgozta ki a Chomsky-hierarchiát. A formális grammatikákának három típusát ismerjük, a környezetfüggetlen nyelvtan, a szabályos nyelvtan és a generatív nyelvtan. A környezetfüggetlen nyelvtanban a szabályok megadása esetén a sazbály bal oldalán csak nem terminális változó állhat, illetve a jobb oldalán csak terminális változók állhatnak.
+        </para>
+    </section>        
+                
+    <section>
+        <title>Hivatkozási nyelv</title>
+        <para>
+            A <citation>KERNIGHANRITCHIE</citation> könyv C referencia-kézikönyv/Utasítások melléklete alapján definiáld 
+            BNF-ben a C utasítás fogalmát!
+            Majd mutass be olyan kódcsipeteket, amelyek adott szabvánnyal nem fordulnak (például C89), mással (például C99) igen.
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gist.github.com/AmidaHS/51e3e1decafd8d80127310d1f9dcfeee">https://gist.github.com/AmidaHS/51e3e1decafd8d80127310d1f9dcfeee</link> 
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            A kódunk a "gcc -std=c89 nev.c -o nev" segítségével nem tud lefordulni, hiszen a hibaüzenetből kiderül, hogy a C++-os kommentelést nem támogatja. 
+            Ellenkező esetben, míg például a "gcc -std=c99 nev.c -o nev" -vel már gond nélkül működik a programunk.
+        </para>
+    </section>                     
+
+    <section>
+        <title>Saját lexikális elemző</title>
+        <para>
+            Írj olyan programot, ami számolja a bemenetén megjelenő valós számokat! 
+            Nem elfogadható olyan megoldás, amely maga olvassa betűnként a bemenetet, 
+            a feladat lényege, hogy lexert használjunk, azaz óriások vállán álljunk és ne kispályázzunk!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:   <link xlink:href="https://gist.github.com/AmidaHS/9fc13b2e82ba699927762c5621fafa34">https://gist.github.com/AmidaHS/9fc13b2e82ba699927762c5621fafa34</link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            Ennek a feladatnak a megoldásához először egy lexer-t kell írni. A programunk elején a %{ %} segítsétségével a majd későbbi c programunkhoz tehetünk részeket. Deklaráljuk, hogy mit is keresünk és hogy azt hogyan tegye(azaz, hogyan néz ki), jelen esetben a valós számokat.Ezután az yylex-el visszahívjuk az előzőeket és kiiratjuk a darabszámot. A futtatás során először C-be kell átírni (lex segítségével), ezután pedig a szokásos módon(gcc-vel), csak egy kapcsolóval ki kell toldani: -lfl ami a lexer miatt elengedhetetlen.  
+        </para>
+    </section>                     
+
+    <section>
+        <title>l33t.l</title>
+        <para>
+            Lexelj össze egy l33t ciphert!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gist.github.com/AmidaHS/b924fb862b98bf7855e8de444e32b06d">https://gist.github.com/AmidaHS/b924fb862b98bf7855e8de444e32b06d</link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            A szokásos módon include-olunk, majd egy random számot generálunk.A cipher tartalmazza a leet kódunk számait és betűit.
+            Működése: A cipher megnézi az összes beolvasott karakterre hogy a kódolandó karakterekben megtalálható-e.Ha igen, kiválasztja a karakterhez a kódolást, ha nem akkor az eredetit írja ki.
+        </para>
+    </section>                     
+
+
+    <section>
+        <title>A források olvasása</title>
+        <para>
+            Hogyan olvasod, hogyan értelmezed természetes nyelven az alábbi kódcsipeteket? Például
+            <programlisting><![CDATA[if(signal(SIGINT, jelkezelo)==SIG_IGN)
+    signal(SIGINT, SIG_IGN);]]></programlisting>
+            Ha a SIGINT jel kezelése figyelmen kívül volt hagyva, akkor ezen túl is legyen
+            figyelmen kívül hagyva, ha nem volt figyelmen kívül hagyva, akkor a jelkezelo függvény
+            kezelje. (Miután a <command>man 7 signal</command> lapon megismertem a SIGINT jelet, a
+            <command>man 2 signal</command> lapon pedig a használt rendszerhívást.)
+        </para>
+
+        <caution>
+            <title>Bugok</title>
+            <para>
+                Vigyázz, sok csipet kerülendő, mert bugokat visz a kódba! Melyek ezek és miért? 
+                Ha nem megy ránézésre, elkapja valamelyiket esetleg a splint vagy a frama?
+            </para>
+        </caution>
+            
+        <orderedlist numeration="lowerroman">
+            <listitem>                                    
+                <programlisting><![CDATA[if(signal(SIGINT, SIG_IGN)!=SIG_IGN)
+    signal(SIGINT, jelkezelo);]]></programlisting>
+            </listitem>
+            <listitem>                                    
+                <programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[printf("%d %d", f(a), a);]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>            
+            </listitem>
+        </orderedlist>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gist.github.com/AmidaHS/3919a161a8a16998b8e1cb07d18fd515">https://gist.github.com/AmidaHS/3919a161a8a16998b8e1cb07d18fd515</link>  
+        </para>
+
+        <para>
+            Megoldás videó: 
+        </para>
+
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            <programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>: For ciklus, ahol az i nulláról ameddig kisebb mint 5 növeljük 1-el.(pre inkrementáló)
+            <programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>: Hasonló az előzőhöz csak post inkrementáló.
+            <programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>:Bugos: kétszeri hivatkozás történik és mivel nem ismerjük a műveleti sorrendet kiszámíthatatlan.
+            <programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>:Bugos: rossz operátort (nem logikai) használunk a <function><![CDATA[&&]]></function> rész után.
+            <programlisting><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>:Bugos:Hasonlóan a kettővel ezelőttihez, nem tudjuk eldönteni a sorrendjét a két f függvénynek, így meghatározni se tudjuk.
+            <programlisting><![CDATA[printf("%d %d", f(a), a);]]></programlisting>:Kiírja az a és az f függvény általl megváltoztatott a értékét.
+            <programlisting><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>:Bugos: Hasonlóan az egyik előzőhöz, itt is a sorrendel van a baj, hiszen az f függvény megváltoztatja az "a" értékét, de így nem tudhatjuk, hogy a kiiratott "a" az új vagy az eredeti értékét adja-e vissza. 
+        </para>
+
+    </section>                     
+
+    <section>
+        <title>Logikus</title>
+        <para>
+            Hogyan olvasod természetes nyelven az alábbi Ar nyelvű formulákat?
+        </para>
+        <programlisting language="tex"><![CDATA[$(\forall x \exists y ((x<y)\wedge(y \text{ prím})))$ 
+
+$(\forall x \exists y ((x<y)\wedge(y \text{ prím})\wedge(SSy \text{ prím})))$ 
+
+$(\exists y \forall x (x \text{ prím}) \supset (x<y)) $ 
+
+$(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
+]]></programlisting>        
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/MatLog_LaTeX">https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/MatLog_LaTeX</link>
+        </para>
+
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/ZexiPy3ZxsA">https://youtu.be/ZexiPy3ZxsA</link>, <link xlink:href="https://youtu.be/AJSXOQFF_wk">https://youtu.be/AJSXOQFF_wk</link>
+        </para>
+
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    <section>
+        <title>Deklaráció</title>
+            
+        <para>
+            Vezesd be egy programba (forduljon le) a következőket: 
+        </para>
+
+        <itemizedlist>
+            <listitem>
+                <para>egész</para>                        
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutató</para>                        
+            </listitem>
+            <listitem>
+                <para>egész referenciája</para>                        
+            </listitem>
+            <listitem>
+                <para>egészek tömbje</para>                        
+            </listitem>
+            <listitem>
+                <para>egészek tömbjének referenciája (nem az első elemé)</para>                        
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatók tömbje</para>                        
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatót visszaadó függvény</para>                        
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatót visszaadó függvényre mutató mutató</para>                        
+            </listitem>
+            <listitem>
+                <para>egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvény</para>                        
+            </listitem>            
+            <listitem>
+                <para>függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvényre</para>                        
+            </listitem>            
+        </itemizedlist>            
+
+       <para>
+            Mit vezetnek be a programba a következő nevek?
+        </para>
+
+        <itemizedlist>
+            <listitem>
+                <programlisting><![CDATA[int a;]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *b = &a;]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int &r = a;]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int c[5];]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int (&tr)[5] = c;]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *d[5];]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *h ();]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *(*l) ();]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>            
+            </listitem>            
+            <listitem>
+                <programlisting><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>            
+            </listitem>            
+        </itemizedlist>       
+
+
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  https://gist.github.com/AmidaHS/fb5d246953a2fc2c518c763df324c80a
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            <programlisting><![CDATA[int a;]]></programlisting> egy egész vezet be a programba.
+            <programlisting><![CDATA[int *b = &a;]]></programlisting> egy egészre mutató mutatót vezet be.
+            <programlisting><![CDATA[int &r = a;]]></programlisting> egy egésznek a referenciáját vezeti be.
+            <programlisting><![CDATA[int c[5];]]></programlisting> egy 5 egészből álló tömböt vezet be.
+            <programlisting><![CDATA[int (&tr)[5] = c;]]></programlisting>  az egészek tömbjének referenciáját vezeti be.
+            <programlisting><![CDATA[int *d[5];]]></programlisting> egy egészre mutató mutatók tömbje.
+            <programlisting><![CDATA[int *h ();]]></programlisting> egy olyan függvény ami az egészre mutató mutatót adja vissza.
+            <programlisting><![CDATA[int *(*l) ();]]></programlisting> egészre mutató mutatót visszaadó függvényre mutató mutató. 
+            <programlisting><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting> egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvény.
+            <programlisting><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting> függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvényre.
+        </para>
+    </section>                     
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

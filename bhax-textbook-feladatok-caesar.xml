@@ -1,0 +1,128 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Caesar!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title><type>double **</type> háromszögmátrix</title>
+        <para>
+           
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:  
+            <link xlink:href="https://gist.github.com/AmidaHS/736d72c4e4d8e61fbad3c487813bbb4f">https://gist.github.com/AmidaHS/736d72c4e4d8e61fbad3c487813bbb4f</link>              
+        </para>
+        <para>
+           Tanulságok, tapasztalatok, magyarázat...Ahhoz, hogy egy háromszögmátrixot kapjunk egy négyzetes mátrixnak kell venni a főátlóját majd vagy az alsó vagy a felső részt kell 0-vá tenni, jelen esetben a felső részt. A double típusú mutatót használjuk és a mallockal függvénnyel a paraméternek lefoglaljuk a szükséges helyett. 
+            Megadjuk, hogy hány bájtos lesz úgy, hogy a sorok számát szorozva 8al,majd rákényszerítjük, hogy double legyen, ha nem sikerül akkor kilép. 
+            Ha ez sikeres akkor, a program végig fut az összes soron és kiírja a sorok értékét.
+            Ezt követően a program megadja az oszlopok értékét.
+            Ezek után megnézzük, hogy a különböző mutatók, hogyan változtatják meg a háromszég mátrix különböző értékeit
+        </para>            
+    </section>        
+    <section>
+        <title>C EXOR titkosító</title>
+        <para>
+            Írj egy EXOR titkosítót C-ben!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:   
+            <link xlink:href="https://gist.github.com/AmidaHS/63f908a3985f40ce1b4fa7b49356e75f">https://gist.github.com/AmidaHS/63f908a3985f40ce1b4fa7b49356e75f</link>             
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            A programunk alapja hogy titkosítani akarunk egy szövegállományt.Ezt a bitek megváltoztatásával tesszük.
+            Először a szükséges könyvtárakat kérjük be majd megadjuk a maximális méretét a kulcsnak és a tárolónak egyaránt.A mainben megadjuk a függvény argumentumát integerben,ennek az értékét a számát valamint a rámutató mutatókat(char-os rész).
+            Ezután deklaráljuk a kulcs méretet és a beolvasott bájtokat, majd a a while ciklust 3 fő részre oszthatjuk: megadja a jelenlegi inputot azaz hol járunk, ezeket a bájtokat berakjuk a bufferbe, majd az olvasott bájtokat kapjuk meg. Végigmenve a bájtokon végrehajtjuk a műveletet a kulcs következő bájtjával. Ezt mindig növeljük 1-el, de az osztás miatt sose lesz a megadott kulcsméreténél nagyobb. Ezek után ha kiakarjuk ezt iratni, akkor egy számunkra imeretlen és olvashatatlan kódot látunk.
+        </para>            
+    </section>        
+    <section>
+        <title>Java EXOR titkosító</title>
+        <para>
+            Írj egy EXOR titkosítót Java-ban!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:   
+            <link xlink:href="https://gist.github.com/AmidaHS/f72bdf8fa8248dee6cba8310c2219281">https://gist.github.com/AmidaHS/f72bdf8fa8248dee6cba8310c2219281</link>             
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+            A program lényege ugyanaz mint az előző feladatban, annyi eltéréssel, hogy ez javaban lett megírva. 
+            A c nyelvtől eltérően a javaban osztalyokat avagy classokat használunk.
+            Kétféle classt definiálunk privát és publikus.
+            A kód továbbá hasonlít a c nyelvi parancsokhoz csak a java sajátosságait kihasználva.
+            A program végénél találhatunk egy try-catch blockot ami a try utánirészeket végrehajtja és a catch után ha van hiba kiírja.
+        </para>            
+    </section>        
+    <section>
+        <title>C EXOR törő</title>
+        <para>
+            Írj egy olyan C programot, amely megtöri az első feladatban előállított titkos szövegeket!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+            <link xlink:href="https://gist.github.com/AmidaHS/e4bdac6cd59ab52426f3a99db607668a">https://gist.github.com/AmidaHS/e4bdac6cd59ab52426f3a99db607668a</link>                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...  Programunk célja az előző titkosításnak a visszakódolása.
+            Az elején a már szokásosnak mondható include-olás és definiáljuk a szükséges elemeket.Ez után kiszámoljuk az átlagos szóhosszt, a szóközöket elvesszük a karakterek számából.Későbbiekben a leggyakoribb szavakkal csökkentjük a törések számát, ezzel könnyítve a szöveg visszakódolását.
+            Az exor részben bájtról-bájtra haladva elvégezzük a törést. Érdemes figyelni a % használatára,mivel ennek segítségével nem számít ha nem akkora a szó mint a keresett kulcs.
+            A while ciklusban addig olvassa a bájtokat míg el nem fogy.A for ciklusok segítségével előállítjuk az összes lehetséges kulcsot majd teszteli azokat, hogy megfelelőek-e. Hasonló a működése és a felépítése, mint a közismertebb brute force algoritmushoz.
+        </para>
+    </section>        
+    <section>
+        <title>Neurális OR, AND és EXOR kapu</title>
+        <para>
+            R
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>               
+        </para>
+        <para>
+           Feladatunk egy egyszerű logikai műveletre épülő neurális háló létrehozása.Legnagyobb részében négy kód bekezdés ismétlődik,viszont mégis más a logikai műveletek végett.
+            Úgy tudjuk megrajzolni a neurális hálónk képét, ha előtte megadjuk, hogy milyen eredményt kell elérnie.
+            Ezt a kaott hálót lekérjük,ami kiszámolja a logikai műveletek eredményét is.
+            Végül a komplexitás emelése miatt növeljük a műveletek pontosságát.
+        </para>            
+        <para>
+        </para>    
+    </section>        
+    <section>
+        <title>Hiba-visszaterjesztéses perceptron</title>
+        <para>
+            C++
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:    
+            <link xlink:href="https://gist.github.com/AmidaHS/b04d2b2effe48ee0d7c567f22bad557c">https://gist.github.com/AmidaHS/b04d2b2effe48ee0d7c567f22bad557c</link>            
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat... 
+            Nézzük meg először mi és hogyan néz ki egy perceptron: A perceptron a neuron az MI-ban használt legelterjedtebb formája, amelynek legfőbb feladata egy véges számú próbálkozásból, hogy megtanulja értelmezni és osztályozni a bemeneti mintát(0 v 1).
+            Felépítése a következő: Három fő részből áll:Retinák,asszociatív cellák és döntési cellák.A retinák fogadják a bemeneti jeleket, amelyek általában 0 vagy 1(igen vagy nem) választ adnak.Az asszociatív cellák az összekötő kapcsok a retinák más asszociatív cellák és a döntési cellák között, itt összegződnek a bejövő jelek. A döntési cellák nyújtják a kimenetet. A mi példánkban a számítógépet a bináris osztályozásra tanítjuk be.
+            Megnézi a program hogy az argumentumok száma kettő-e ha igen tovább fut ha nem értelemszerűen megáll. A terminál segítségével azt is megadja, hogyan is irassuk ki és futtassuk a programunkat. A megadott PNG fájlt beolvassa, amiben a perceptronunk segítségével eltároljuk a pixeleket. A for ciklusban előhívjuk a perceptront ami megadja nekünk a képünket.
+        </para>            
+    </section>        
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                
